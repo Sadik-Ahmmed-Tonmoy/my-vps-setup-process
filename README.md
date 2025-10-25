@@ -56,9 +56,14 @@ Install NVM & Node.js
 <pre>
   <code id="example-code">
     nvm -v
+  </code>
+   <code id="example-code">
     nvm install --lts
-    nvm install 18.17.1 (for specific version)
+  </code> <code id="example-code">
+    nvm install 18.17.1 (optional - for specific version)
+  </code> <code id="example-code">
     node -v
+  </code> <code id="example-code">
     npm -v
   </code>
 </pre>
