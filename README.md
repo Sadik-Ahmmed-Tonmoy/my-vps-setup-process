@@ -118,17 +118,54 @@ Setup nginx
 <pre>
   <code id="example-code">
     sudo ufw allow 80/tcp
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo ufw allow 3000
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo ufw allow 443/tcp
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo ufw reload
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo apt install nginx -y
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo systemctl status nginx
+   </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo systemctl start nginx
+  </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo systemctl enable nginx
+   </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo ufw allow 'Nginx Full'
+   </code>
+</pre>
+<pre>
+  <code id="example-code">
     sudo ufw enable
   </code>
 </pre>
+
 
 ### STEP 6
 Configure nginx 
