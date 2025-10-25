@@ -59,7 +59,6 @@ Install NVM & Node.js
   </code>
 </pre>
 <pre>
-  copy
    <code id="example-code">
     nvm install --lts
   </code> 
