@@ -250,10 +250,11 @@ Install Project & Setup
 <pre>
     cd /var/www
     git clone <git repository using ssh>
+    cd project-name
     npm install
     npm run build
 
-      npm run dev   # Test if running properly
+    npm run dev   # Test if running properly
 
 
 Stop local dev run: CTRL + Z
