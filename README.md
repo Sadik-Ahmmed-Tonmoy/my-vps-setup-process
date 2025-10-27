@@ -231,7 +231,9 @@ Configure nginx
     press ctrl + x (^X Exit )
 
 
-   ### Must replace the domain url, exactly used for sites-available start up (example: sudo ln -s /etc/nginx/sites-available/kamodoc_backend /etc/nginx/sites-enabled)
+   ### Must replace the domain url, exactly used for sites-available start up 
+   (example: sudo ln -s /etc/nginx/sites-available/kamodoc_backend /etc/nginx/sites-enabled)
+  
     sudo ln -s /etc/nginx/sites-available/api.yourdomain.com /etc/nginx/sites-enabled
     sudo nginx -t
     sudo systemctl reload nginx
