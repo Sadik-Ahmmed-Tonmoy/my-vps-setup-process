@@ -141,9 +141,9 @@ Setup nginx
   </code>
 </pre>
 
-  <code id="example-code">
+<pre>
     sudo systemctl status nginx
-   </code>
+</pre>
 
 <pre>
   <code id="example-code">
