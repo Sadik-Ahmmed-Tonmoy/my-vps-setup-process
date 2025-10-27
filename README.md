@@ -248,11 +248,40 @@ Configure nginx
 ### STEP 7
 Install Project & Setup
 <pre>
-  <code id="example-code">
+    cd /var/www
     git clone <git repository using ssh>
     npm install
     npm run build
-    npm run start
+
+      npm run dev   # Test if running properly
+
+
+Stop local dev run: CTRL + Z
+
+4️⃣ If Port Error Occurs for the port already use
+
+Open .env file
+
+Change the PORT value to a new number
+
+Commit & push to GitHub
+
+git add .
+git commit -m "Changed port"
+git push
+
+
+Then:
+
+git pull
+npm install
+npm run build
+
+5️⃣ Allow Port in Firewall
+sudo ufw allow <PORT>
+
+
+  
     npm install -g pm2
     pm2 --version
       pm2 start npm --name "project-frontend" -- start (for next js frontend)
@@ -261,9 +290,21 @@ Install Project & Setup
     pm2 startup
     pm2 save
     pm2 restart all (restart)
+  
+  7️⃣ Check Logs:
+pm2 logs
+
+8️⃣ If get any error
+sudo lsof -i :<PORT>
+sudo kill -9 PID (replace with PID CODE)   # If multiple, kill all PIDs
+pm2 logs
+
+9️⃣ Test Live Deployment
+http://<SERVER_IP>:<PORT>
+
+  
       pm2 stop nextjs-app (stop server)
       pm2 delete nextjs-app (delete server)
-  </code>
 </pre>
 
 ### STEP 8
