@@ -168,11 +168,12 @@ Setup nginx
 
 
 ### STEP 6
+### This is for next js
 Configure nginx 
 <pre>
   #this is for next js
-  ### Must replace the domain url(can use ip also, example: 31.97.139.151)
   
+  ### Must replace the domain url, can use name also(example: sudo nano /etc/nginx/sites-available/kamodoc_backend)
   <code id="example-code">
     sudo nano /etc/nginx/sites-available/yourdomain.com
   </code>
@@ -199,27 +200,17 @@ Configure nginx
 </pre>
 
 
+### This is for backend server setup
 <pre>
+
+  ### Must replace the domain url, can use name also(example: sudo nano /etc/nginx/sites-available/kamodoc_backend)
   <code id="example-code">
     sudo nano /etc/nginx/sites-available/yourdomain.com
+  </code>
+  
 
-    #this is for next js
-    server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-    location / {
-        proxy_pass http://localhost:3000; # Next.js runs on port 3000
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-        }
-    }
-    
-    sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled
-
-    #this is backend server setup
+  ### Change server_name(can use ip also, example: server_name 31.97.139.151)
+  ### Change proxy_pass(change the port number, example:  proxy_pass  http://localhost:5075;)
     server{
         listen 80;
         server_name api.myfinancialtrading.com;
@@ -233,11 +224,18 @@ Configure nginx
                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
      }
-    
+
+
+    press : ctrl + o ( ^O Write Out)
+    press : Enter
+    press ctrl + x (^X Exit )
+
+
+   ### Must replace the domain url, exactly used for sites-available start up (example: sudo ln -s /etc/nginx/sites-available/kamodoc_backend /etc/nginx/sites-enabled)
     sudo ln -s /etc/nginx/sites-available/api.yourdomain.com /etc/nginx/sites-enabled
     sudo nginx -t
     sudo systemctl reload nginx
-  </code>
+
 </pre>
 
 
