@@ -170,6 +170,36 @@ Setup nginx
 ### STEP 6
 Configure nginx 
 <pre>
+  #this is for next js
+  ### Must replace the domain url(can use ip also, example: 31.97.139.151)
+  
+  <code id="example-code">
+    sudo nano /etc/nginx/sites-available/yourdomain.com
+  </code>
+
+  
+ <code id="example-code">
+    server {
+    listen 80;
+    server_name yourdomain.com www.yourdomain.com;
+    location / {
+        proxy_pass http://localhost:3000; # Next.js runs on port 3000
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        }
+    }
+     </code>
+    
+    sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled
+    sudo nginx -t
+    sudo systemctl reload nginx
+</pre>
+
+
+<pre>
   <code id="example-code">
     sudo nano /etc/nginx/sites-available/yourdomain.com
 
@@ -209,6 +239,9 @@ Configure nginx
     sudo systemctl reload nginx
   </code>
 </pre>
+
+
+
 
 
 
