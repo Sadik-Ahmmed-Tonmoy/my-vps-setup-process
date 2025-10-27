@@ -140,11 +140,11 @@ Setup nginx
     sudo apt install nginx -y
   </code>
 </pre>
-<pre>
+
   <code id="example-code">
     sudo systemctl status nginx
    </code>
-</pre>
+
 <pre>
   <code id="example-code">
     sudo systemctl start nginx
